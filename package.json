@@ -4,14 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently -n yjs,vite \"npx y-websocket\" \"npx vite\"",
+    "dev": "concurrently -n yjs,vite \"set PORT=4444 & node ./node_modules/y-webrtc/bin/server.js\" \"npx vite\"",
     "build": "vite build",
     "preview": "concurrently -n yjs,vite \"npx y-websocket\" \"npx vite preview\""
   },
   "dependencies": {
+    "@kinde-oss/kinde-auth-pkce-js": "^3.0.25",
     "concurrently": "^8.2.1",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5",
+    "y-indexeddb": "^9.0.12",
+    "y-webrtc": "^10.2.5",
     "y-websocket": "^1.5.0",
     "yjs": "^13.6.8"
   },
